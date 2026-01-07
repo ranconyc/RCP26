@@ -77,14 +77,14 @@ const SkillsSection = () => {
         Technical Skills & Stack
       </h1>
       {/* skills columns */}
-      <div className="grid gap-8 md:grid-cols-3 md:align-start">
+      <div className="grid gap-8 md:items-start md:grid-cols-3">
         {columns.map((column, index) => (
           // skill column
           <div key={index} className="grid gap-7">
             {/* skill header */}
             <div className="h-25 flex flex-col justify-between ">
               {column.icon}
-              <h2 className="text-2xl font-bold lg:text-xl">{column.title}</h2>
+              <h2 className="text-2xl font-bold md:text-xl">{column.title}</h2>
             </div>
             {/* skill items */}
             {column.skills.map((skill, skillIndex) => (
@@ -112,8 +112,8 @@ const SkillsSection = () => {
 
 export default function About() {
   return (
-    <div className="min-h-screen font-sans bg-zinc-800 text-white border border-green-300">
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="min-h-screen font-sans bg-zinc-800 text-white">
+      <main className="max-w-3xl mx-auto px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold mb-8">About Me</h1>
         <p className="text-lg mb-4">{aboutData.bio}</p>
         <SkillsSection />
