@@ -4,13 +4,7 @@ const projectsData = [
     name: "TravelMate",
     description:
       "Helping people find their next travelmate to explore the world with.",
-    skills: [
-      "User research",
-      "Wireframing",
-      "UI design",
-      "User research",
-      "Development",
-    ],
+    skills: ["User research", "Wireframe", "UI design", "typeScript", "React"],
     color: "orange",
   },
   {
@@ -20,10 +14,11 @@ const projectsData = [
       "Improving the site experience for mental health product company.",
     skills: [
       "User research",
-      "Wireframing",
+      "Wireframe",
       "UI design",
-      "User research",
-      "Development",
+      "User testing",
+      "Figma",
+      "prototyping",
     ],
     color: "blue",
   },
