@@ -5,7 +5,7 @@ const projectsData = [
     description:
       "Helping people find their next travelmate to explore the world with.",
     skills: ["User research", "Wireframe", "UI design", "typeScript", "React"],
-    color: "orange",
+    color: "pink",
   },
   {
     type: "commercial website",
