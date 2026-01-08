@@ -1,4 +1,5 @@
-import { Code, Figma, Search, CheckCircle2 } from "lucide-react";
+import { Code, Figma, Search, CheckCircle2, School } from "lucide-react";
+import { title } from "process";
 interface SkillItem {
   label: string;
   items: string[];
@@ -110,12 +111,69 @@ const SkillsSection = () => {
   );
 };
 
+const JourneyData = [
+  {
+    title: "Design Empathy (UX/UI)",
+    School: "General Assembly",
+    year: "2019",
+    p1: "My journey into design started at General Assembly, where I learned the fundamentals of UX/UI design. I discovered the power of user research, journey mapping, and designing with empathy at the core.",
+    p2: "My time as an Apple Specialist taught me the importance of human-centered design in practice. Every customer interaction reinforced how technology should feel invisible—intuitive, accessible, and delightful.",
+  },
+  {
+    title: "Technical Logic (Full-Stack)",
+    School: "Le Wagon",
+    year: "2020",
+    p1: "To bring my designs to life, I enrolled in Le Wagon's full-stack development bootcamp. There, I mastered HTML, CSS, JavaScript, and React.",
+    p2: "Learning to code transformed how I approach design. I no longer just hand off mockups—I build them. I understand technical constraints, performance considerations, and accessibility standards from the inside out.",
+  },
+];
+
+const Badge = ({ text, color }: { text: string; color: string }) => {
+  return (
+    <span
+      className={`w-6 h-6 bg-${color} rounded flex items-center justify-center text-xs font-semibold`}
+    >
+      {text}
+    </span>
+  );
+};
+const JourneySection = () => {
+  return (
+    <section className="mt-16">
+      <h1 className="text-2xl md:text-3xl font-bold mb-8">My Journey</h1>
+      <div className="grid md:grid-cols-2 gap-8">
+        {JourneyData.map((journey, index) => (
+          <div
+            key={index}
+            className="mb-12 border border-blue-300 bg-blue-600/10 rounded-xl p-6"
+          >
+            <h2 className="text-xl font-semibold mb-1">{journey.title}</h2>
+            <div className="flex items-center">
+              {journey.School === "General Assembly" ? (
+                <Badge text="GA" color="red" />
+              ) : (
+                <Badge text="LW" color="blue" />
+              )}
+              <h3 className="text-md text-gray-400 mb-1">
+                {journey.School} &#8226; {journey.year}
+              </h3>
+            </div>
+            <p className="mb-2">{journey.p1}</p>
+            <p>{journey.p2}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 export default function About() {
   return (
     <div className="min-h-screen font-sans bg-zinc-800 text-white">
-      <main className="max-w-3xl mx-auto px-6 lg:px-8 py-16">
+      <main className="max-w-240 mx-auto px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold mb-8">About Me</h1>
         <p className="text-lg mb-4">{aboutData.bio}</p>
+        <JourneySection />
         <SkillsSection />
       </main>
     </div>
